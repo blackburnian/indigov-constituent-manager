@@ -1,0 +1,1 @@
+export { ConstituentsTable } from "./ConstituentsTable";
