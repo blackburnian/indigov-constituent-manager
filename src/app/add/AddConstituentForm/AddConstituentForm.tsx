@@ -110,6 +110,12 @@ export const AddConstituentForm = () => {
 
   return (
     <div className="w-full mx-auto">
+      {(message || error) && (
+        <div className="py-8">
+          {message && <p className="text-green-500">{message}</p>}
+          {error && <p className="text-red-500">{error}</p>}
+        </div>
+      )}
       <form onSubmit={handleSubmit} className="w-full max-w-lg">
         {formFields.map(({ name, label, type, required }) => {
           return (
@@ -139,10 +145,6 @@ export const AddConstituentForm = () => {
           Submit
         </button>
       </form>
-      <div className="py-8">
-        {message && <p className="text-green-500">{message}</p>}
-        {error && <p className="text-red-500">{error}</p>}
-      </div>
     </div>
   );
 };
